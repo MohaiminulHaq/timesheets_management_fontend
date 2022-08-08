@@ -1,0 +1,103 @@
+
+
+
+<div class="main" >
+
+  <div class="container-fluid">
+
+    <div class="card-body d-flex flex-column align-items-center" >
+      <br>
+      <h3 class="text-center"> Login </h3>
+      <hr >
+    <div class="card"  style="width: 60% ;height: 400px; background-color: blanchedalmond" *ngIf="frmGroup">
+      <form [formGroup]="frmGroup" class="p-8">
+        <!-- row 1 -->
+        <hr ><br >
+
+        <div class="row" style="text-align: center" >
+
+          <div class="col">
+              <mat-label style="margin-top: -15px" fxFlex="40%" fxFlex.md="40%" fxFlex.sm="40%"
+                         fxFlex.xs="100%">{{'Email' | translate}}<strong
+                class="required">*</strong>
+              </mat-label>
+              <mat-form-field class="fuse-mat-dense flex-auto" fxFlex="60%" fxFlex.md="60%"
+                              fxFlex.sm="60%"
+                              fxFlex.xs="100%">
+                <input
+                       id="email"
+                       matInput
+                       placeholder="email"
+                       [formControlName]="'email'">
+                <mat-error>{{'emptyNotAllow' | translate}}</mat-error>
+              </mat-form-field>
+          </div>
+
+          <div class="col"  >
+              <mat-label style="margin-top: -15px" fxFlex="40%" fxFlex.md="40%" fxFlex.sm="40%"
+                         fxFlex.xs="100%">{{'User Name' | translate}}<strong
+                class="required">*</strong>
+              </mat-label>
+              <mat-form-field class="fuse-mat-dense flex-auto" fxFlex="60%" fxFlex.md="60%"
+                              fxFlex.sm="60%"
+                              fxFlex.xs="100%">
+                <input  id="userName"
+                        matInput
+                        placeholder="userName"
+                        [formControlName]="'userName'">
+                <mat-error>{{'emptyNotAllow' | translate}}</mat-error>
+              </mat-form-field>
+
+          </div>
+
+        </div>
+        <!-- row 1 -->
+        <div class="row"  >
+
+          <div class="col "style="margin-left: 10%">
+            <mat-label style="margin-top: -15px" fxFlex="40%" fxFlex.md="40%" fxFlex.sm="40%"
+                       fxFlex.xs="100%">{{'User Role Type' | translate}}<strong class="required">*</strong>
+            </mat-label>
+            <mat-select-search  style="text-align: center"
+              [formGroup]="frmGroup"
+              [controlName]="'userRole'"
+              [data]="userRoleList" >
+            </mat-select-search>
+          </div>
+
+          <div class="col"  >
+
+
+          </div>
+
+        </div>
+
+<br>
+
+        <button style="margin-left: 3% " (click)="resetFromData()" class="px-8 mr-2" mat-flat-button color="accent"
+                type="button">
+          <span *ngIf="!editValue ">{{'Reset' | translate}}</span>
+          <span *ngIf="editValue">{{'Cancel' | translate}}</span>
+        </button>
+
+        <button style="margin-left: 3% "  (click)="login()" [disabled]="!frmGroup.valid " class="px-8"
+                mat-flat-button color="primary" type="button">
+          {{'Login' | translate}}
+
+        </button>
+
+
+
+              </form>
+
+
+
+
+</div>
+</div>
+</div>
+</div>
+
+
+
+

@@ -1,0 +1,2 @@
+// FTW
+export const FTW_TENDER_MASTER_TABLE = 'FTW_TENDER_MASTER';

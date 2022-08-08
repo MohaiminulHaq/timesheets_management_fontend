@@ -1,0 +1,28 @@
+
+<mat-card style="height: 450px">
+  <div class="card"  style="width: 60%; background-color: bisque" *ngIf="frmGroup">
+    <form [formGroup]="frmGroup" class="p-8">
+<mat-checkbox
+              formControlName="submit">
+  {{'Submit' | translate}}
+</mat-checkbox>
+
+    </form>
+    <button style="margin-left: 3% ;width: 150px " *ngIf="!editValue " (click)="onUpdate()" [disabled]="!frmGroup.valid " class="px-8"
+            mat-flat-button color="primary" type="button">
+      {{'Sent' | translate}}
+
+    </button>
+  </div>
+
+    </mat-card>
+    <!--model info-->
+
+
+
+    <!------------------------------------------------------------------------------------------------------------------------------>
+
+<mat-dialog-actions align="end">
+    <button mat-button class="no-button" (click)="onNoClick()">{{'close' | translate}}</button>
+</mat-dialog-actions>
+

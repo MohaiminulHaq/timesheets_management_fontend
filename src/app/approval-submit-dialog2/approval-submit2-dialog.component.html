@@ -1,0 +1,28 @@
+
+<mat-card>
+  <div class="card"  style="width: 60%; background-color: bisque" *ngIf="frmGroup">
+    <form [formGroup]="frmGroup" class="p-8">
+<mat-checkbox fxFlex="20%" fxFlex.xs="100%" fxFlex.sm="100%" fxFlex.md="100%"
+              formControlName="approve">
+  {{'Approve' | translate}}
+</mat-checkbox>
+
+    </form>
+    <button style="margin-left: 3% " *ngIf="!editValue " (click)="onUpdate()" [disabled]="!frmGroup.valid " class="px-8"
+            mat-flat-button color="primary" type="button">
+      {{'Approved' | translate}}
+
+    </button>
+  </div>
+
+    </mat-card>
+    <!--model info-->
+
+
+
+    <!------------------------------------------------------------------------------------------------------------------------------>
+
+<mat-dialog-actions align="end">
+    <button mat-button class="no-button" (click)="onNoClick()">{{'close' | translate}}</button>
+</mat-dialog-actions>
+
